@@ -2,6 +2,7 @@
 
 [![Licence: Apache-2.0](https://img.shields.io/badge/Licence-Apache--2.0-blue.svg)](LICENSE)
 [![Python 3](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
+[![Tests](https://github.com/aurelson101/hackscan/actions/workflows/tests.yml/badge.svg)](https://github.com/aurelson101/hackscan/actions/workflows/tests.yml)
 
 > Utilisation exclusivement autorisée, bornée et non destructive. Vous êtes responsable du périmètre et des autorisations applicables.
 
@@ -177,7 +178,7 @@ Inventaire des plugins/thèmes visibles sur cinq pages au maximum, versions déc
 Le rapport RSSI/CISO comprend une synthèse décisionnelle, le périmètre et les budgets, une matrice de couverture, des fiches de constats avec impact conditionnel et preuve, l'inventaire, les formulaires et dépendances visibles, un plan de traitement avec responsables/échéances proposés et preuves de clôture, puis les annexes techniques. Les blocages sont expliqués avec conséquence et action proposée ; ils ne constituent pas des vulnérabilités. Aucun score de sécurité, CVE, probabilité ni validation métier n'est inventé. Les réponses sont horodatées avec durée, empreinte SHA-256 et en-têtes sélectionnés ; les valeurs des cookies et les corps complets ne sont pas archivés. Les résultats détaillés de WPScan et sqlmap sont conservés si ces outils sont activés. Réutiliser un dossier de sortie non vide est refusé. Les dossiers créés sont privés et les rapports sont lisibles uniquement par leur propriétaire.
 
 ```bash
-.venv/bin/python -m unittest -v test_hackscan test_router_profiles test_professional
+.venv/bin/python -m unittest discover -v
 .venv/bin/python hackscan.py --help
 ```
 
@@ -237,10 +238,12 @@ Après édition du plan dans le navigateur, régénérer les livrables sans reco
 Les propositions de confirmation et d’acceptation requièrent un validateur et une preuve/justification. La saisie reste une déclaration humaine ; le script ne réalise pas une validation technique automatique et ne corrige pas le site. Le CSV neutralise les cellules susceptibles d’être interprétées comme des formules. Les empreintes détectent les modifications de fichiers mais ne constituent pas une signature numérique ou un horodatage tiers.
 
 ```bash
-.venv/bin/python -m unittest -v test_hackscan test_features test_intelligence
+.venv/bin/python -m unittest discover -v
 # Vérification réelle des filtres, du plan, des téléchargements et du mobile :
 .venv/bin/python -m pip install -r requirements-dev.txt
-.venv/bin/python test_browser.py reports/defta-v4-live --output reports/browser-v4
+.venv/bin/python browser_validation.py reports/mon-audit --output reports/browser-validation
 # Vérification des livrables (depuis le dossier du rapport) :
 sha256sum --check manifest.sha256
 ```
+
+Les fichiers `test_*.py` couvrent les garde-fous automatisables et sont exécutés par la CI GitHub. `browser_validation.py` est volontairement séparé : il exige Firefox/geckodriver et valide visuellement un rapport déjà généré. Dependabot surveille chaque semaine les dépendances Python et les actions GitHub.

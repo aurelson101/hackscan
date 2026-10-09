@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 from workflow import fingerprint, manifest
 from exports import export_files, extra_html, filters_html
 from intelligence import analyze
-from report_v4 import intelligence_html, intelligence_assets
+from report_intelligence import intelligence_html, intelligence_assets
 from presentation import styles, executive_body, report_actions, navigation_script
 from evidence_signing import sign_manifest
 

@@ -5,7 +5,7 @@ import html
 import io
 import json
 from pathlib import Path
-from report_v4 import additional_exports, pdf_analysis
+from report_intelligence import additional_exports, pdf_analysis
 from presentation import executive_page
 
 

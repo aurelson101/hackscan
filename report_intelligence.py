@@ -1,4 +1,4 @@
-"""Présentation décisionnelle autonome et accessible."""
+"""Présentation décisionnelle et exports d'intelligence de sécurité."""
 import csv
 import html
 import io

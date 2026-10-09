@@ -1,4 +1,4 @@
-"""Vérification optionnelle Firefox : filtres, plan édité, téléchargements et responsive."""
+"""Validation manuelle Firefox : filtres, plan édité, téléchargements et responsive."""
 import argparse
 import functools
 import hashlib
