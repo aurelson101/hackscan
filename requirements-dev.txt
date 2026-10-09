@@ -1,1 +1,1 @@
-selenium>=4.39,<5
+selenium>=4.50.0,<5
