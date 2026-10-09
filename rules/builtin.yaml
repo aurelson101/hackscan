@@ -1,0 +1,29 @@
+schema: 1
+rules:
+  - {id: wp-robots, profile: wordpress, method: GET, path: robots.txt, risk: passif, purpose: Inventaire public}
+  - {id: wp-rest, profile: wordpress, method: GET, path: wp-json/, risk: passif, purpose: API publique}
+  - {id: wp-readme, profile: wordpress, method: GET, path: readme.html, risk: passif, purpose: Version déclarative}
+  - {id: wp-login, profile: wordpress, method: GET, path: wp-login.php, risk: passif, purpose: Surface authentification}
+  - {id: wp-xmlrpc, profile: wordpress, method: GET, path: xmlrpc.php, risk: passif, purpose: Surface XML-RPC}
+  - {id: joomla-admin, profile: joomla, method: GET, path: administrator/, risk: passif, purpose: Interface publique}
+  - {id: joomla-api, profile: joomla, method: GET, path: api/index.php/v1/, risk: passif, purpose: API publique}
+  - {id: joomla-manifest, profile: joomla, method: GET, path: administrator/manifests/files/joomla.xml, risk: passif, purpose: Version déclarative}
+  - {id: joomla-robots, profile: joomla, method: GET, path: robots.txt, risk: passif, purpose: Inventaire public}
+  - {id: drupal-login, profile: drupal, method: GET, path: user/login, risk: passif, purpose: Interface publique}
+  - {id: drupal-changelog, profile: drupal, method: GET, path: CHANGELOG.txt, risk: passif, purpose: Version déclarative}
+  - {id: drupal-core-changelog, profile: drupal, method: GET, path: core/CHANGELOG.txt, risk: passif, purpose: Version déclarative}
+  - {id: drupal-robots, profile: drupal, method: GET, path: robots.txt, risk: passif, purpose: Inventaire public}
+  - {id: router-robots, profile: router-generic, method: GET, path: robots.txt, risk: passif, purpose: Inventaire local}
+  - {id: router-index, profile: router-generic, method: GET, path: index.html, risk: passif, purpose: Interface locale}
+  - {id: bbox-summary, profile: router-bouygues, method: GET, path: api/v1/summary, risk: passif, purpose: Synthèse expurgée}
+  - {id: bbox-hosts-lite, profile: router-bouygues, method: GET, path: api/v1/hosts/lite, risk: passif, purpose: Inventaire expurgé}
+  - {id: bbox-wan, profile: router-bouygues, method: GET, path: api/v1/wan/ip, risk: passif, purpose: État WAN expurgé}
+  - {id: bbox-wps, profile: router-bouygues, method: GET, path: api/v1/wireless/wps, risk: passif, purpose: État WPS expurgé}
+  - {id: bbox-wireless, profile: router-bouygues, method: GET, path: api/v1/wireless, risk: passif, purpose: Contrôle d'accès}
+  - {id: bbox-hosts, profile: router-bouygues, method: GET, path: api/v1/hosts, risk: passif, purpose: Contrôle d'accès}
+  - {id: bbox-firewall, profile: router-bouygues, method: GET, path: api/v1/firewall, risk: passif, purpose: Contrôle d'accès}
+  - {id: bbox-token, profile: router-bouygues, method: GET, path: api/v1/device/token, risk: passif, purpose: Contrôle d'accès}
+  - {id: livebox-index, profile: router-orange, method: GET, path: index.html, risk: passif, purpose: Interface locale}
+  - {id: livebox-webapp, profile: router-orange, method: GET, path: webapp/, risk: passif, purpose: Interface locale}
+  - {id: livebox-robots, profile: router-orange, method: GET, path: robots.txt, risk: passif, purpose: Inventaire local}
+

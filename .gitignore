@@ -1,0 +1,31 @@
+# Environnements et caches Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Rapports, preuves et états locaux potentiellement sensibles
+reports/
+*.log
+checkpoint.json
+manifest.sig
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.secrets
+.config/
+
+# Éditeurs et système
+.idea/
+.vscode/
+.DS_Store
+*~
