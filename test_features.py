@@ -5,6 +5,7 @@ import re
 import socket
 import ssl
 import subprocess
+import sys
 import tempfile
 import threading
 import unittest
@@ -145,7 +146,7 @@ class FeaturesTests(unittest.TestCase):
         root = Path(__file__).resolve().parent
         with tempfile.TemporaryDirectory() as folder:
             output, config = Path(folder)/'audit', Path(folder)/'prefs.json'
-            base = [str(root/'.venv/bin/python'), str(root/'hackscan.py'), '--authorized', '--profile','rapide','--max-pages','1','--delay','.2','--config',str(config)]
+            base = [sys.executable, str(root/'hackscan.py'), '--authorized', '--profile','rapide','--max-pages','1','--delay','.2','--config',str(config)]
             first = subprocess.run(base+[self.url+'joomla','--output',str(output)],capture_output=True,text=True,timeout=15)
             self.assertEqual(first.returncode,0,first.stderr)
             before = json.loads((output/'report.json').read_text())
